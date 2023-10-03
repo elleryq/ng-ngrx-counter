@@ -22,6 +22,18 @@ docker run --name build --rm -v $(pwd):/usr/src/app node:14.20-alpine /bin/sh -c
 
 編譯好的 artifacts 將會出現在 `dist/` 目錄。使用 `--prod` 來產出生產環境用的 artifact.
 
+## 建置 war
+
+```
+./build-war.sh
+```
+
+## 測試 war 檔案
+
+```
+docker run -v $(pwd)/ng-ngrx-counter.war:/usr/local/tomcat/webapps/ROOT.war -p 8080:8080 -it --rm tomcat:9.0
+```
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
