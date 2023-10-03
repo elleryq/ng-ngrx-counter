@@ -4,10 +4,10 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-RUN npm run build
-RUN ls -l /usr/src/app/dist
+RUN npm run build --prod
+RUN ls -l /usr/src/app/dist/ng-ngrx-counter
 
 ### STAGE 2: Run ###
 FROM nginx:1.25.2-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /usr/src/app/dist/* /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/ng-ngrx-counter/* /usr/share/nginx/html

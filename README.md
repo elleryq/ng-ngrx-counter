@@ -12,7 +12,15 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+執行 `ng build` 來編譯專案。
+
+或是用容器形式來編譯
+
+```
+docker run --name build --rm -v $(pwd):/usr/src/app node:14.20-alpine /bin/sh -c "cd /usr/src/app && npm install && npm run build --prod"
+```
+
+編譯好的 artifacts 將會出現在 `dist/` 目錄。使用 `--prod` 來產出生產環境用的 artifact.
 
 ## Running unit tests
 
