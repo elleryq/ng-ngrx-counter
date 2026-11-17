@@ -26,6 +26,15 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
+    customLaunchers: {
+      // For CI / Linux hosts where Chrome's sandbox is unavailable
+      // (e.g. Docker, or Ubuntu 23.10+ with AppArmor userns restrictions).
+      // Usage: ng test --watch=false --browsers=ChromeHeadlessNoSandbox
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox'],
+      },
+    },
     singleRun: false,
     restartOnFileChange: true
   });
