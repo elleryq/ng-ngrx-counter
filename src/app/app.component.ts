@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 
@@ -6,6 +6,7 @@ import {Observable} from 'rxjs/Observable';
   selector: 'app-root',
   standalone: false,
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
