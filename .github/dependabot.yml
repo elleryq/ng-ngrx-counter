@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # Security updates only: 0 disables routine version-update PRs while
+    # Dependabot security updates keep working.
+    open-pull-requests-limit: 0
+    groups:
+      # Combine all npm security fixes into a single PR instead of one per package.
+      npm-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+    commit-message:
+      prefix: build
+      include: scope
