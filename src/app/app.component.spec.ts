@@ -1,22 +1,23 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed } from '@angular/core/testing';
+import { provideRouter, RouterOutlet } from '@angular/router';
 import { provideMockStore } from '@ngrx/store/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterOutlet
       ],
       declarations: [
         AppComponent
       ],
       providers: [
+        provideRouter([]),
         provideMockStore({ initialState: { counter: 0 } }),
       ],
     }).compileComponents();
-  }));
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);

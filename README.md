@@ -36,11 +36,7 @@ docker run -v $(pwd)/ng-ngrx-counter.war:/usr/local/tomcat/webapps/ROOT.war -p 8
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng test` to execute the unit tests via [Vitest](https://vitest.dev). Use `npm run test:ci` for a single run without watch mode.
 
 ## Further help
 
