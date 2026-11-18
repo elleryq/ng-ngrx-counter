@@ -22,7 +22,7 @@
     "rxjs": "^6.6.2",
     "rxjs-compat": "^6.6.2",
     "tslib": "^2.0.1",
-    "ua-parser-js": "^2.0.9",
+    "ua-parser-js": "^2.0.10",
     "zone.js": "~0.16.0"
   },
   "devDependencies": {
